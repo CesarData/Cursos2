@@ -32,14 +32,20 @@ class HomeFragment : Fragment() {
             }
         }
 
-        val btnDestination = view.findViewById<Button>(R.id.navigate_destination_button)
-        btnDestination?.setOnClickListener {
+        val btnCourses = view.findViewById<Button>(R.id.button_courses)
+        btnCourses?.setOnClickListener {
             findNavController().navigate(R.id.flow_step_one_dest, null, options)
         }
+
+        val btnMyCourses = view.findViewById<Button>(R.id.button_my_courses)
+        btnMyCourses?.setOnClickListener {
+            findNavController().navigate(R.id.flow_step_two_dest, null, options)
+        }
+
         val btnAction = view.findViewById<Button>(R.id.navigate_action_button)
         btnAction?.setOnClickListener {
             //findNavController().navigate(R.id.next_action, null, options)
-            val flowStepNumberArg = 1
+            val flowStepNumberArg = 2
             val action = HomeFragmentDirections.nextAction(flowStepNumberArg)
             findNavController().navigate(action)
         }
