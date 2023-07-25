@@ -11,19 +11,25 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.*
 import com.bedu.cursos.R
+import com.bedu.cursos.databinding.MainActivityBinding
 
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
+    private lateinit var binding: MainActivityBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.navigation_activity)
 
-        val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        setSupportActionBar(toolbar)
+        binding = MainActivityBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
+        //setContentView(R.layout.main_activity)
+
+        //val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        setSupportActionBar(binding.toolbar)
 
         val host: NavHostFragment = supportFragmentManager
             .findFragmentById(R.id.my_nav_host_fragment) as NavHostFragment? ?: return
@@ -33,10 +39,10 @@ class MainActivity : AppCompatActivity() {
 
         //appBarConfiguration = AppBarConfiguration(navController.graph)
 
-        val drawerLayout : DrawerLayout? = findViewById(R.id.drawer_layout)
+        //val drawerLayout : DrawerLayout? = findViewById(R.id.drawer_layout)
         appBarConfiguration = AppBarConfiguration(
             setOf(R.id.home_dest, R.id.deeplink_dest),
-            drawerLayout
+            binding.drawerLayout //drawerLayout
         )
 
         setupActionBar(navController, appBarConfiguration)

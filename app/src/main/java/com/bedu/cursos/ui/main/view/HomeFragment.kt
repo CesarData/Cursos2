@@ -8,9 +8,11 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.navOptions
 //import com.bedu.cursos.ui.main.view.HomeFragmentDirections
 import com.bedu.cursos.R
+//import com.bedu.cursos.databinding.HomeFragmentBinding
 
 class HomeFragment : Fragment() {
 
+    //private lateinit var binding: HomeFragmentBinding
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -22,6 +24,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        //binding = HomeFragmentBinding.bind(view)
 
         val options = navOptions {
             anim {
@@ -33,16 +36,19 @@ class HomeFragment : Fragment() {
         }
 
         val btnCourses = view.findViewById<Button>(R.id.button_courses)
-        btnCourses?.setOnClickListener {
+        btnCourses?.setOnClickListener{
+        //binding.buttonCourses.setOnClickListener {
             findNavController().navigate(R.id.flow_step_one_dest, null, options)
         }
 
         val btnMyCourses = view.findViewById<Button>(R.id.button_my_courses)
+        //binding.buttonMyCourses.setOnClickListener {
         btnMyCourses?.setOnClickListener {
             findNavController().navigate(R.id.flow_step_two_dest, null, options)
         }
 
         val btnAction = view.findViewById<Button>(R.id.navigate_action_button)
+        //binding.navigateActionButton.setOnClickListener {
         btnAction?.setOnClickListener {
             //findNavController().navigate(R.id.next_action, null, options)
             val flowStepNumberArg = 2
