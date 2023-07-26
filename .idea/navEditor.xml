@@ -20,13 +20,13 @@
                       </LayoutPositions>
                     </value>
                   </entry>
-                  <entry key="flow_step_one_dest">
+                  <entry key="flow_courses_dest">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="12" />
-                            <option name="y" value="368" />
+                            <option name="x" value="198" />
+                            <option name="y" value="203" />
                           </Point>
                         </option>
                         <option name="myPositions">
@@ -41,13 +41,13 @@
                       </LayoutPositions>
                     </value>
                   </entry>
-                  <entry key="flow_step_two_dest">
+                  <entry key="flow_my_courses_dest">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="256" />
-                            <option name="y" value="368" />
+                            <option name="x" value="500" />
+                            <option name="y" value="419" />
                           </Point>
                         </option>
                         <option name="myPositions">
@@ -67,18 +67,9 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="500" />
-                            <option name="y" value="368" />
+                            <option name="x" value="-104" />
+                            <option name="y" value="398" />
                           </Point>
-                        </option>
-                        <option name="myPositions">
-                          <map>
-                            <entry key="next_action">
-                              <value>
-                                <LayoutPositions />
-                              </value>
-                            </entry>
-                          </map>
                         </option>
                       </LayoutPositions>
                     </value>
@@ -88,8 +79,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="12" />
-                            <option name="y" value="12" />
+                            <option name="x" value="392" />
+                            <option name="y" value="-25" />
                           </Point>
                         </option>
                       </LayoutPositions>

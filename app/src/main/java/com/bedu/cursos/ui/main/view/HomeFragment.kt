@@ -2,17 +2,16 @@ package com.bedu.cursos.ui.main.view
 
 import android.os.Bundle
 import android.view.*
-import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.navOptions
 //import com.bedu.cursos.ui.main.view.HomeFragmentDirections
 import com.bedu.cursos.R
-//import com.bedu.cursos.databinding.HomeFragmentBinding
+import com.bedu.cursos.databinding.HomeFragmentBinding
 
 class HomeFragment : Fragment() {
 
-    //private lateinit var binding: HomeFragmentBinding
+    private lateinit var binding: HomeFragmentBinding
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -24,7 +23,8 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //binding = HomeFragmentBinding.bind(view)
+
+        binding = HomeFragmentBinding.bind(view)
 
         val options = navOptions {
             anim {
@@ -35,25 +35,19 @@ class HomeFragment : Fragment() {
             }
         }
 
-        val btnCourses = view.findViewById<Button>(R.id.button_courses)
-        btnCourses?.setOnClickListener{
-        //binding.buttonCourses.setOnClickListener {
-            findNavController().navigate(R.id.flow_step_one_dest, null, options)
+        binding.buttonCourses.setOnClickListener {
+            findNavController().navigate(R.id.flow_courses_dest, null, options)
         }
 
-        val btnMyCourses = view.findViewById<Button>(R.id.button_my_courses)
-        //binding.buttonMyCourses.setOnClickListener {
-        btnMyCourses?.setOnClickListener {
-            findNavController().navigate(R.id.flow_step_two_dest, null, options)
+        binding.buttonMyCourses.setOnClickListener {
+            findNavController().navigate(R.id.home_to_my_courses_dest, null, options)
         }
 
-        val btnAction = view.findViewById<Button>(R.id.navigate_action_button)
-        //binding.navigateActionButton.setOnClickListener {
-        btnAction?.setOnClickListener {
-            //findNavController().navigate(R.id.next_action, null, options)
-            val flowStepNumberArg = 2
-            val action = HomeFragmentDirections.nextAction(flowStepNumberArg)
-            findNavController().navigate(action)
-        }
+//        binding.navigateActionButton.setOnClickListener {
+//            //findNavController().navigate(R.id.next_action, null, options)
+//            val flowNumberArg = 1
+//            val action = HomeFragmentDirections.nextAction(flowNumberArg)
+//            findNavController().navigate(action)
+//        }
     }
 }

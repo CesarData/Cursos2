@@ -11,26 +11,33 @@
 
         <action
             android:id="@+id/next_action"
-            app:destination="@+id/flow_step_one_dest"
+            app:destination="@+id/flow_courses_dest"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/home_to_my_courses_dest"
+            app:destination="@id/flow_my_courses_dest"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
 
     </fragment>
 
     <fragment
-        android:id="@+id/flow_step_one_dest"
+        android:id="@+id/flow_courses_dest"
         android:name="com.bedu.cursos.ui.courses.view.CoursesFragment"
-        tools:layout="@layout/flow_step_one_fragment">
+        tools:layout="@layout/courses_fragment">
         <argument
-            android:name="flowStepNumber"
+            android:name="flowNumber"
             android:defaultValue="1"
             app:argType="integer" />
 
         <action
             android:id="@+id/next_action"
-            app:destination="@+id/flow_step_two_dest"
+            app:destination="@+id/flow_my_courses_dest"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
@@ -38,12 +45,12 @@
     </fragment>
 
     <fragment
-        android:id="@+id/flow_step_two_dest"
-        android:name="com.bedu.cursos.ui.courses.view.CoursesFragment"
-        tools:layout="@layout/flow_step_two_fragment">
+        android:id="@+id/flow_my_courses_dest"
+        android:name="com.bedu.cursos.ui.courses.view.MyCoursesFragment"
+        tools:layout="@layout/my_courses_fragment">
 
         <argument
-            android:name="flowStepNumber"
+            android:name="flowNumber"
             android:defaultValue="2"
             app:argType="integer" />
 

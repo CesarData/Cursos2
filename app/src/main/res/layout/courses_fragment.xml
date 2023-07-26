@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    tools:context=".ui.courses.view.CoursesFragment">
+
+    <TextView
+        android:id="@+id/tv_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/text_fragment_courses"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Categoría" />
+
+    <ProgressBar
+        android:id="@+id/progress_circular"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <HorizontalScrollView
+        android:id="@+id/horizon_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_category"
+        android:layout_marginTop="8dp"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/button_design"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/blue"
+                android:drawableLeft="@drawable/baseline_design_services_24"
+                android:text="@string/button_design"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/button_prog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="#CD8025"
+                android:drawableLeft="@drawable/baseline_code_24"
+                android:text="@string/button_prog"
+                app:layout_constraintStart_toEndOf="@+id/button_design" />
+
+            <Button
+                android:id="@+id/button_web"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/green"
+                android:drawableLeft="@drawable/baseline_web_24"
+                android:text="@string/button_web"
+                app:layout_constraintStart_toStartOf="@+id/button_programmation"
+                />
+
+            <Button
+                android:id="@+id/button_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="#D8D3E1"
+                android:text="@string/text_fragment_courses2"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/button_programmation"
+                tools:text="Ver Todo" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@+id/horizon_layout"
+        tools:listitem="@layout/cardview_course" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,6 +3,7 @@ package com.bedu.cursos.ui.main.view
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
@@ -12,13 +13,16 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.*
 import com.bedu.cursos.R
 import com.bedu.cursos.databinding.MainActivityBinding
+import com.bedu.cursos.ui.courses.viewmodel.CourseViewModel
 
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
+
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: MainActivityBinding
+    //private val courseViewModel: CourseViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,9 +30,9 @@ class MainActivity : AppCompatActivity() {
         binding = MainActivityBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-        //setContentView(R.layout.main_activity)
 
-        //val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        //courseViewModel.onCreate()
+
         setSupportActionBar(binding.toolbar)
 
         val host: NavHostFragment = supportFragmentManager
@@ -37,9 +41,6 @@ class MainActivity : AppCompatActivity() {
         // Set up Action Bar
         val navController = host.navController
 
-        //appBarConfiguration = AppBarConfiguration(navController.graph)
-
-        //val drawerLayout : DrawerLayout? = findViewById(R.id.drawer_layout)
         appBarConfiguration = AppBarConfiguration(
             setOf(R.id.home_dest, R.id.deeplink_dest),
             binding.drawerLayout //drawerLayout
