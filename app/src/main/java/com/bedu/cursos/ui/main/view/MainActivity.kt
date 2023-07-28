@@ -34,6 +34,8 @@ class MainActivity : AppCompatActivity() {
         //courseViewModel.onCreate()
 
         setSupportActionBar(binding.toolbar)
+        getSupportActionBar()?.hide()
+
 
         val host: NavHostFragment = supportFragmentManager
             .findFragmentById(R.id.my_nav_host_fragment) as NavHostFragment? ?: return
@@ -42,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         val navController = host.navController
 
         appBarConfiguration = AppBarConfiguration(
-            setOf(R.id.home_dest, R.id.deeplink_dest),
+            setOf(R.id.home_dest, R.id.flow_my_courses_dest, R.id.settings_dest),
             binding.drawerLayout //drawerLayout
         )
 

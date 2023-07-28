@@ -9,6 +9,7 @@ import androidx.navigation.navOptions
 import com.bedu.cursos.R
 import com.bedu.cursos.databinding.HomeFragmentBinding
 
+
 class HomeFragment : Fragment() {
 
     private lateinit var binding: HomeFragmentBinding
@@ -43,11 +44,5 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.home_to_my_courses_dest, null, options)
         }
 
-//        binding.navigateActionButton.setOnClickListener {
-//            //findNavController().navigate(R.id.next_action, null, options)
-//            val flowNumberArg = 1
-//            val action = HomeFragmentDirections.nextAction(flowNumberArg)
-//            findNavController().navigate(action)
-//        }
     }
 }

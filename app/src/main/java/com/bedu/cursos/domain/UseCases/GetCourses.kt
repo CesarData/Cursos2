@@ -5,8 +5,8 @@ import com.bedu.cursos.data.model.Course
 
 class GetCourses {
     private val repository = CourseRepositoty()
-
-    suspend operator fun invoke(): List<Course>?{
-        return repository.getAllCourses()
-    }
+//
+//    suspend operator fun invoke(): List<Course>?{
+//        return repository.getAllCourses()
+//    }
 }

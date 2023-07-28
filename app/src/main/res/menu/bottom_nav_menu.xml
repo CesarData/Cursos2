@@ -5,7 +5,11 @@
         android:icon="@drawable/ic_home"
         android:title="@string/home" />
     <item
-        android:id="@id/deeplink_dest"
-        android:icon="@drawable/ic_android"
-        android:title="@string/deeplink" />
+        android:id="@id/flow_courses_dest"
+        android:icon="@drawable/baseline_cast_for_education_24"
+        android:title="@string/my_courses" />
+    <item
+        android:id="@id/flow_my_courses_dest"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/settings" />
 </menu>
