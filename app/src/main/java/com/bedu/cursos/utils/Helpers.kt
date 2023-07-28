@@ -29,7 +29,7 @@ class Helpers {
         fun convertDataClass(context: Context, dataClassA: CourseResponse): Course {
             val resources: Resources = context.resources
             val packageName: String = context.packageName
-            val image = resources.getIdentifier(dataClassA.image, "drawable", packageName)
+            //val image = resources.getIdentifier(dataClassA.image, "drawable", packageName)
             //Course(++cont, R.drawable.photoshop, "Diseño","Photoshop", 40F, 269.90F, 3.5F),
             with(dataClassA){
                 return Course(id, image, category, name, duration, price, rating)
@@ -42,7 +42,7 @@ class Helpers {
 
             val courses: MutableList<Course> = mutableListOf()
             for (item in dataClassA){
-                val image = resources.getIdentifier(item.image, "drawable", packageName)
+                //val image = resources.getIdentifier(item.image, "drawable", packageName)
                 with(item){
                     val course = Course(id, image, category, name, duration, price, rating)
                     courses.add(course)

@@ -8,7 +8,7 @@ import android.os.Parcelable
 
 data class Course(
     var id: Int,
-    var image: Int,
+    var image: String,
     var category : String,
     var name: String,
     var duration: Float,
@@ -19,7 +19,7 @@ data class Course(
 
     override fun writeToParcel(dest: Parcel, flags: Int) {
         dest.writeInt(id)
-        dest.writeInt(image)
+        dest.writeString(image)
         dest.writeString(category)
         dest.writeString(name)
         dest.writeFloat(duration)
@@ -35,7 +35,7 @@ data class Course(
         override fun createFromParcel(parcel: Parcel): Course {
             return Course(
                 parcel.readInt(),
-                parcel.readInt(),
+                parcel.readString()!!,
                 parcel.readString()!!,
                 parcel.readString()!!,
                 parcel.readFloat(),

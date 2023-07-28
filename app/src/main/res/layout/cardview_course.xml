@@ -48,7 +48,6 @@
             android:id="@+id/course_image"
             android:layout_width="72dp"
             android:layout_height="72dp"
-            android:src="@drawable/python"
             android:adjustViewBounds="true"
             app:layout_constraintBottom_toTopOf="@+id/guideline"
             app:layout_constraintStart_toStartOf="@+id/guideline2"

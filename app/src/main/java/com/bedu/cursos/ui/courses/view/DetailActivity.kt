@@ -17,6 +17,7 @@ import com.bedu.cursos.data.model.Course
 import com.bedu.cursos.databinding.ActivityDetailBinding
 import com.bedu.cursos.utils.CourseClickListener
 import com.bedu.cursos.utils.Helpers
+import com.squareup.picasso.Picasso
 
 class DetailActivity : AppCompatActivity(), CourseClickListener {
 
@@ -48,7 +49,7 @@ class DetailActivity : AppCompatActivity(), CourseClickListener {
         val course: Course? = intent.getParcelableExtra(Helpers.COURSE_ITEM)
         val isViewBuy = intent.getBooleanExtra(Helpers.IS_VIEW_BUY, false)
         if(course != null) {
-            binding.courseImage.setImageResource(course.image)
+            Picasso.get().load(course.image).into(binding.courseImage)
             binding.tvCourse.text = course.name
             binding.tvPrice.text = "$" + String.format("%.2f", course.price)
             binding.tvDuration.text = String.format("%.2f", course.duration) + " horas"
